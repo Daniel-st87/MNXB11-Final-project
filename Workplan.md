@@ -1,13 +1,16 @@
 Tasks to do:
+Stage 1: Create repository 
 
-Create the Makefile document and the LaTeX document for the final hand-in.
+Stage 2: Analyze data, create graphs
 
-The figures that each person will create:
-
-German:
+German: Warmest/coldest day of each year
 
 Ana Rita:
 
 Daniel:
 
-Marcus: Comparing the temperature difference on Christmas every year between two stations
+Marcus:
+
+Possible ideas for figures:
+
+Stage 3: Debugging and build
