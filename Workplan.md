@@ -11,7 +11,9 @@ Ana Rita:
 
 Daniel:
 
-Marcus: Comparing the temperature of christmas between two stations
+Marcus: Comparing the temperature of Christmas every year between two stations
+
+Kosh:
 
 Possible ideas for figures:
 
