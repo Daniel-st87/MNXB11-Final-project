@@ -13,7 +13,7 @@ Daniel:
 
 Marcus: Comparing the temperature of Christmas every year between two stations
 
-Kosh:
+Kosh: Comparing the hottest day in a year, every year for all the data for Halmstad 
 
 Possible ideas for figures:
 
