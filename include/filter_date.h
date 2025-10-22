@@ -3,14 +3,7 @@
 
 #include <string>
 #include <vector>
-
-struct DataRow
-{
-    std::string date;       // takes the date
-    std::string time;       // tracks the time
-    double temperature;     // tracks the temp
-    std::string sourceFile; // tracks which CSV file the row came from
-};
+#include "data_types.h"
 
 std::vector<DataRow> filterDate(const std::string &csvFile, const std::string &targetDate); // reads CSV file adn returns the row that match the date
 
