@@ -14,8 +14,8 @@
 
 int compare_temps()
 {
-    std::string csvCity1 = "/home/marcus1/git/MNXB11-Final-project/Preprocessed_data/Lund.csv"; // selects the correct csv files
-    std::string csvCity2 = "/home/marcus1/git/MNXB11-Final-project/Preprocessed_data/Lulea.csv";
+    std::string csvCity1 = "~/git/MNXB11-Final-project/Preprocessed_data/Lund.csv"; // selects the correct csv files
+    std::string csvCity2 = "~/git/MNXB11-Final-project/Preprocessed_data/Lulea.csv";
     std::string targetDay = "12-25"; // Christmas
 
     int startYear = 1949; // chose a year that both of the .csv files have
