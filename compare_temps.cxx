@@ -1,3 +1,12 @@
+/*
+gSystem->AddIncludePath("-I/home/marcus1/git/MNXB11-Final-project/include");
+.L /home/marcus1/git/MNXB11-Final-project/src/filter_date.cxx+
+.L /home/marcus1/git/MNXB11-Final-project/src/average_temp.cxx+
+.L /home/marcus1/git/MNXB11-Final-project/src/make_lists.cxx+
+.L compare_temps.cxx+
+
+*/
+
 #include "filter_date.h"
 #include "average_temp.h"
 #include "make_lists.h"
@@ -20,7 +29,7 @@ int compare_temps()
     std::string csvCity2 = std::string(home) + "/git/MNXB11-Final-project/Preprocessed_data/Lulea.csv";
     std::string targetDay = "12-25";
 
-    int startYear = 1949;
+    int startYear = 1500;
 
     auto dataCity1 = filterDate(csvCity1, targetDay);
     auto dataCity2 = filterDate(csvCity2, targetDay);
@@ -92,7 +101,7 @@ int compare_temps()
     grDiff->SetMarkerColor(kRed);
     grDiff->SetMarkerStyle(20);
     grDiff->SetLineWidth(2);
-    grDiff->SetTitle(Form("Temperature Difference (Lund - Lulea) on Christmas (from %d)", startYear));
+    grDiff->SetTitle(Form("Temperature Difference (Lund - Lulea) on Christmas (from %d)", static_cast<int>(years.front()))); // This last part does so title has year that the data starts from
     grDiff->GetXaxis()->SetTitle("Year");
     grDiff->GetYaxis()->SetTitle("Temperature Difference (#circ C)");
 
