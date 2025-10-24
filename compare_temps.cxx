@@ -6,6 +6,7 @@
 #include <TGraph.h>
 #include <TAxis.h>
 #include <TCanvas.h>
+#include <TLegend.h>
 #include <iostream>
 #include <vector>
 #include <map>
@@ -14,25 +15,26 @@
 
 int compare_temps()
 {
-    std::string csvCity1 = "~/git/MNXB11-Final-project/Preprocessed_data/Lund.csv"; // selects the correct csv files
-    std::string csvCity2 = "~/git/MNXB11-Final-project/Preprocessed_data/Lulea.csv";
-    std::string targetDay = "12-25"; // Christmas
+    const char *home = getenv("HOME");
+    std::string csvCity1 = std::string(home) + "/git/MNXB11-Final-project/Preprocessed_data/Lund.csv";
+    std::string csvCity2 = std::string(home) + "/git/MNXB11-Final-project/Preprocessed_data/Lulea.csv";
+    std::string targetDay = "12-25";
 
-    int startYear = 1949; // chose a year that both of the .csv files have
+    int startYear = 1949;
 
-    auto dataCity1 = filterDate(csvCity1, targetDay); // filters both the .csv files to only select wanted date
+    auto dataCity1 = filterDate(csvCity1, targetDay);
     auto dataCity2 = filterDate(csvCity2, targetDay);
 
-    auto avgCity1 = computeAveragePerDate(dataCity1); // get the average of that year
-    auto avgCity2 = computeAveragePerDate(dataCity2);
+    auto avgCity1 = calc_average_temp(dataCity1);
+    auto avgCity2 = calc_average_temp(dataCity2);
 
     std::vector<double> years1, temps1, years2, temps2;
-    makeLists(avgCity1, years1, temps1); // convert this to lists
+    makeLists(avgCity1, years1, temps1);
     makeLists(avgCity2, years2, temps2);
 
     auto filterByYear = [startYear](std::vector<double> &years, std::vector<double> &temps)
     {
-        std::vector<double> newYears, newTemps; // This function makes sure that only data after the chosen startyear is kept
+        std::vector<double> newYears, newTemps;
         for (size_t i = 0; i < years.size(); ++i)
         {
             if (years[i] >= startYear)
@@ -49,7 +51,7 @@ int compare_temps()
     filterByYear(years2, temps2);
 
     std::vector<double> years, diffTemps;
-    for (size_t i = 0; i < years1.size(); ++i) // This matches the years and calculates the temperature difference
+    for (size_t i = 0; i < years1.size(); ++i)
     {
         double year = years1[i];
         auto it = std::find(years2.begin(), years2.end(), year);
@@ -68,23 +70,48 @@ int compare_temps()
         return 1;
     }
 
-    TCanvas *c = new TCanvas("c", "Temperature Difference on Christmas", 800, 600); // creates the canvas for the graph
-    TGraph *gr = new TGraph(years.size(), years.data(), diffTemps.data());
-    gr->SetTitle(Form("Temperature Difference (Lund - Lulea) on Christmas (from %d)", startYear)); // sets title
-    gr->GetXaxis()->SetTitle("Year");                                                              // sets xaxis title
-    gr->GetYaxis()->SetTitle("Temperature Difference (#circ C)");
-    gr->SetLineColor(kRed);     // does so line connecting dots is red
-    gr->SetMarkerColor(kGreen); // does so the dots are green
-    gr->SetMarkerStyle(20);     // filled circle
-    gr->SetLineWidth(2);
+    const int window = 5; // Calculate the moving average- in this case 5 years
+    std::vector<double> movingAvg(diffTemps.size());
+    for (size_t i = 0; i < diffTemps.size(); ++i)
+    {
+        int start = (i >= window - 1) ? i - (window - 1) : 0;
+        double localSum = 0.0;
+        int count = 0;
+        for (size_t j = start; j <= i; ++j)
+        {
+            localSum += diffTemps[j];
+            count++;
+        }
+        movingAvg[i] = localSum / count;
+    }
 
-    gr->Draw("ALP"); // A=axis, L=line, P=points
+    TCanvas *c = new TCanvas("c", "Temperature Difference on Christmas", 900, 600);
 
-    c->Update();
+    TGraph *grDiff = new TGraph(years.size(), years.data(), diffTemps.data());
+    grDiff->SetLineColor(kBlack);
+    grDiff->SetMarkerColor(kRed);
+    grDiff->SetMarkerStyle(20);
+    grDiff->SetLineWidth(2);
+    grDiff->SetTitle(Form("Temperature Difference (Lund - Lulea) on Christmas (from %d)", startYear));
+    grDiff->GetXaxis()->SetTitle("Year");
+    grDiff->GetYaxis()->SetTitle("Temperature Difference (#circ C)");
 
-    c->SaveAs("temp_diff_christmas.pdf");
+    TGraph *grMoving = new TGraph(years.size(), years.data(), movingAvg.data());
+    grMoving->SetLineColor(kBlue);
+    grMoving->SetLineWidth(2);
+    grMoving->SetLineStyle(2);
 
-    std::cout << "Temperature difference graph saved to temp_diff_christmas.pdf\n";
+    grDiff->Draw("ALP");
+    grMoving->Draw("L SAME");
+
+    auto legend = new TLegend(0.15, 0.75, 0.45, 0.9);
+    legend->AddEntry(grDiff, "Yearly temperature difference", "lp");
+    legend->AddEntry(grMoving, "5-year moving average", "l");
+    legend->Draw();
+
+    c->SaveAs("temp_diff_christmas_with_averages.pdf");
+
+    std::cout << "\nSaved plot to temp_diff_christmas_with_averages.pdf\n";
 
     return 0;
 }
