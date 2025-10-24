@@ -5,7 +5,7 @@
 
 bool isDate(const std::string &date, const std::string &targetMonthDay)
 {
-    std::string monthDay = date.substr(5, 5); // extract MM-DD from YYYY-MM-DD // makes sure that the date is same as the target date
+    std::string monthDay = date.substr(5, 5); // extract MM-DD from YYYY-MM-DD, makes sure that the date is same as the target date
     return monthDay == targetMonthDay;
 }
 
@@ -18,7 +18,7 @@ std::vector<DataRow> filterDate(const std::string &csvFile, const std::string &t
     if (!file.is_open()) // checks that the file can be opened
     {
         std::cerr << "Could not open file " << csvFile << "\n";
-        return filteredData;
+        return filteredData; // returns empty list
     }
 
     while (std::getline(file, line)) // reads the csv file line by line until the end of the file
@@ -31,14 +31,7 @@ std::vector<DataRow> filterDate(const std::string &csvFile, const std::string &t
         std::getline(ss, time, ',');
         std::getline(ss, tempStr, ',');
 
-        try // this does so program doesnt crash when it doesnt work
-        {
-            temperature = std::stod(tempStr); // converts the temperature from a string to double
-        }
-        catch (...)
-        {
-            continue; // skip invalid rows
-        }
+        temperature = std::stod(tempStr); // converts the string of the temperature to a double
 
         if (isDate(date, targetMonthDay))
         {
@@ -52,7 +45,7 @@ std::vector<DataRow> filterDate(const std::string &csvFile, const std::string &t
 
 void writeData(const std::string &outputFile, const std::vector<DataRow> &data)
 {
-    std::ofstream outFile(outputFile);
+    std::ofstream outFile(outputFile); // opens the output file that will have DataRows in it
     if (!outFile.is_open())
     {
         std::cerr << "Could not open output file " << outputFile << "\n";
@@ -63,7 +56,7 @@ void writeData(const std::string &outputFile, const std::vector<DataRow> &data)
 
     for (const auto &row : data)
     {
-        outFile << row.date << "," << row.time << "," << row.temperature << "," << row.sourceFile << "\n";
+        outFile << row.date << "," << row.time << "," << row.temperature << "," << row.sourceFile << "\n"; // writes each datarow object as a CSV line
     }
 
     outFile.close();
