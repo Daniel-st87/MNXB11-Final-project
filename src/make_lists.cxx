@@ -12,15 +12,8 @@ void makeLists(const std::map<std::string, double> &averages,
 
     for (const auto &entry : averages)
     {
-        try
-        {
-            int year = std::stoi(entry.first.substr(0, 4)); // turns the text year into a double so it can be stored better in the list
-            years.push_back(static_cast<double>(year));
-            temps.push_back(entry.second);
-        }
-        catch (...)
-        {
-            std::cerr << "Warning: invalid date format in " << entry.first << "\n";
-        }
+        int year = std::stoi(entry.first.substr(0, 4)); // turns the text year into a double so it can be stored better in the list
+        years.push_back(static_cast<double>(year));     // have it as double as root prefers graphing doubles
+        temps.push_back(entry.second);                  // the value part of dictionary goes to the temperature list
     }
 }
