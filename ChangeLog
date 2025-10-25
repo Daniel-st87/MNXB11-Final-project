@@ -1,3 +1,8 @@
+2025-10-24 Daniel Stålhammar
+
+The corupt_data.cxx and corupt_data.h files was edited to suits better against the processed data-files.
+Unshore if they works. The corupt_data.cxx and corupt_data.h files needs more overlock.
+
 2025-10-24 Marcus O'Riordan
 
 I added a moving average to the figure that shows the difference in temperature between Lund and Lulea. Additionally, more comments were added to the source files to make them easier to understand.
@@ -5,6 +10,10 @@ I added a moving average to the figure that shows the difference in temperature 
 2025-10-23 Marcus O'Riordan
 
 The Changelog was created and edited. I created a source and header file which can take two columns from the csv files and turn it into lists, which can then be used to graph. A cxx file was written that can take the .csv files, select the day that is wanted from several years, average the temperature over each year, and then find the difference in these average temperatures between the two cities for that specific day. The code then finally plots this data using root.
+
+2025-10-23 Daniel Stålhammar
+
+The files corupt_data.h and corupt_data.cxx was created. They should controll if it is some date in the csv-files which miss teperature. 
 
 2025-10-22 Koshin Puri
 
