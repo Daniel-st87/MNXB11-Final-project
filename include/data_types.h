@@ -3,12 +3,19 @@
 
 #include <string>
 
-struct DataRow // shared data_structure for all of the processing of CSV
+struct DataRow // shared data structure for all of the processing of CSV
 {
     std::string date;
     std::string time;
     double temperature;
     std::string sourceFile;
+};
+
+struct Wave
+{
+    std::string start_date;
+    std::string end_date;
+    int duration;
 };
 
 #endif // DATA_TYPES_H
