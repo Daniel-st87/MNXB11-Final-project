@@ -11,7 +11,7 @@ struct DataRow // shared data structure for all of the processing of CSV
     std::string sourceFile;
 };
 
-struct Wave
+struct Wave // used for the heat and cold wave figures
 {
     std::string start_date;
     std::string end_date;
