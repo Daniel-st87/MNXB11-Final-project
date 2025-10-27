@@ -1,7 +1,10 @@
 #include "filter_date.h"
-#include <fstream>
-#include <sstream>
+#include "CSV_reader.h"
+#include "data_types.h"
+#include <vector>
+#include <string>
 #include <iostream>
+#include <fstream>
 
 bool isDate(const std::string &date, const std::string &targetMonthDay)
 {
@@ -9,37 +12,20 @@ bool isDate(const std::string &date, const std::string &targetMonthDay)
     return monthDay == targetMonthDay;
 }
 
+// filter CSV by target date using readCSV()
 std::vector<DataRow> filterDate(const std::string &csvFile, const std::string &targetMonthDay)
 {
-    std::ifstream file(csvFile);       // opens csv file for reading
-    std::vector<DataRow> filteredData; // this is where data is stored
-    std::string line;                  // temporary variable to read each line from csv
+    std::vector<DataRow> allData = readCSV(csvFile); // reuse CSV reader
+    std::vector<DataRow> filteredData;
 
-    if (!file.is_open()) // checks that the file can be opened
+    for (const auto &row : allData)
     {
-        std::cerr << "Could not open file " << csvFile << "\n";
-        return filteredData; // returns empty list
-    }
-
-    while (std::getline(file, line)) // reads the csv file line by line until the end of the file
-    {
-        std::stringstream ss(line);
-        std::string date, time, tempStr;
-        double temperature;
-
-        std::getline(ss, date, ','); // This does so it splits the columns correctly
-        std::getline(ss, time, ',');
-        std::getline(ss, tempStr, ',');
-
-        temperature = std::stod(tempStr); // converts the string of the temperature to a double
-
-        if (isDate(date, targetMonthDay))
+        if (isDate(row.date, targetMonthDay))
         {
-            filteredData.push_back({date, time, temperature, csvFile}); // if it matches the correct date then creates row and adds it to filtered data
+            filteredData.push_back(row);
         }
     }
 
-    file.close();
     return filteredData;
 }
 
