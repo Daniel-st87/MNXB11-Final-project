@@ -1,3 +1,6 @@
+2025-10-28 German Luzin
+Added analysis of the Warmest and Coldest days in Lund over the years, including histogram and gausian fit.
+
 2025-10-24 Daniel Stålhammar
 
 The corupt_data.cxx and corupt_data.h files was edited to suits better against the processed data-files.
