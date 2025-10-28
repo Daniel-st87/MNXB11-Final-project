@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 2025-10-27 Daniel Stålhammar
 Move the controllist in corupt_data.cxx to be inside the forelop.
+=======
+2025-10-28 German Luzin
+Added analysis of the Warmest and Coldest days in Lund over the years, including histogram and gausian fit.
+>>>>>>> 5dd4e542c892555e19462c6237f808bc5c25148b
 
 2025-10-24 Daniel Stålhammar
 
