@@ -1,3 +1,11 @@
+2025-10-28 Koshin Puri
+Added comments to my max_temp_per_year files and troubleshooted compilation issue, therefore creating a custom Makefile to compile the analysis code
+In this process I moved my main file for max_temp_per_year into src instead of the root directory
+Added how to run max_temp function in README.md
+Created a file to plot the data "plot_max_temp_per_year.cxx"
+Integrated changes into main file and makefile
+Tested output and png creation worked successfully
+
 2025-10-28 German Luzin
 Added analysis of the Warmest and Coldest days in Lund over the years, including histogram and gausian fit.
 
@@ -19,6 +27,7 @@ The Changelog was created and edited. I created a source and header file which c
 The files corupt_data.h and corupt_data.cxx was created. They should controll if it is some date in the csv-files which miss teperature. 
 
 2025-10-22 Koshin Puri
+Wrote in Workplan.md my chosen topic 
 
 2025-10-22 Marcus O'Riordan
 
