@@ -7,7 +7,7 @@ Stage 3: Analyze data, create graphs
 
 German: Warmest/coldest day of each year
 
-Ana Rita:
+Ana Rita: study heat waves and cold waves for two stations far appart from each other
 
 Daniel:
 

@@ -1,0 +1,37 @@
+2025-10-28 German Luzin
+Added analysis of the Warmest and Coldest days in Lund over the years, including histogram and gausian fit.
+
+2025-10-24 Daniel Stålhammar
+
+The corupt_data.cxx and corupt_data.h files was edited to suits better against the processed data-files.
+Unshore if they works. The corupt_data.cxx and corupt_data.h files needs more overlock.
+
+2025-10-24 Marcus O'Riordan
+
+I added a moving average to the figure that shows the difference in temperature between Lund and Lulea. Additionally, more comments were added to the source files to make them easier to understand.
+
+2025-10-23 Marcus O'Riordan
+
+The Changelog was created and edited. I created a source and header file which can take two columns from the csv files and turn it into lists, which can then be used to graph. A cxx file was written that can take the .csv files, select the day that is wanted from several years, average the temperature over each year, and then find the difference in these average temperatures between the two cities for that specific day. The code then finally plots this data using root.
+
+2025-10-23 Daniel Stålhammar
+
+The files corupt_data.h and corupt_data.cxx was created. They should controll if it is some date in the csv-files which miss teperature. 
+
+2025-10-22 Koshin Puri
+
+2025-10-22 Marcus O'Riordan
+
+The bash script was used on all of the cities' files to remove the metadata. These new .csv files were then saved into a new folder called Preprocessed_data. Then a source and header file were created which allows you to chose a specific day and month, the source file then selects all of those days from the different years from a specific .csv file. These newly selected dates are then put into a new .csv file. A new source and header file were then created that can average the temperature over a single day.
+
+2025-10-20 German Luzin
+
+2025-10-20 Marcus O'Riordan
+
+The workplan was edited to include what figure I was going to generate.
+
+2025-10-18 Marcus O'Riordan
+
+The repository was created as well as the workplan. The unedited datasets were copied over from the project template and the individual files were extracted. Finally, a bash script was written which removes the metadata from the origional .csv files, leaving only 3 columns with the date, time, and temperature.
+
+
