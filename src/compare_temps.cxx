@@ -3,6 +3,7 @@ gSystem->AddIncludePath("-I/home/marcus1/git/MNXB11-Final-project/include");
 .L /home/marcus1/git/MNXB11-Final-project/src/filter_date.cxx+
 .L /home/marcus1/git/MNXB11-Final-project/src/average_temp.cxx+
 .L /home/marcus1/git/MNXB11-Final-project/src/make_lists.cxx+
+.L /home/marcus1/git/MNXB11-Final-project/src/CSV_reader.cxx+
 .L /home/marcus1/git/MNXB11-Final-project/src/compare_temps.cxx+
 
 */
@@ -127,9 +128,9 @@ int compare_temps()
     legend->AddEntry(grMoving, "5-year moving average", "l");
     legend->Draw();
 
-    c->SaveAs("temp_diff_christmas.pdf");
+    c->SaveAs("figures/temp_diff_christmas.png");
 
-    std::cout << "\nSaved plot to temp_diff_christmas_with_averages.pdf\n";
+    std::cout << "\nSaved plot to temp_diff_christmas_with_averages.png\n";
 
     return 0;
 }
