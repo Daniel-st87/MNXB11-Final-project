@@ -8,7 +8,7 @@
 class Corupt_data(datafile){
 
     l=corupt_data(datafile);
-    if l not false {return true};
+    if l.size()>0 {return l};
     else {return false};
 
     
