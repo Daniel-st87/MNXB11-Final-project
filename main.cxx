@@ -17,9 +17,9 @@ int main()
     std::cout << "Generating graphs..." << std::endl;
 
     compare_temps();     // For temps between two cities
-    minmax();            // For min and max temp
+    //minmax();            // For min and max temp
     waves();             // for the heat waves figures
-    main_max_Halmstad(); // For creating the max temps in halmstad
+    main_max_Soderarm(); // For creating the max temps in Soderarm
 
     std::cout << "All graphs completed!" << std::endl;
     return 0;

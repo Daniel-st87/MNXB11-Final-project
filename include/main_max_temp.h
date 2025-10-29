@@ -5,6 +5,6 @@
 #include "average_temp.h"
 #include "max_temp_per_year.h"
 
-int main_max_Halmstad();
+int main_max_Soderarm();
 
 #endif
