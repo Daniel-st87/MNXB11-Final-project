@@ -7,13 +7,14 @@
 void corupt_data(datafile){
   // Was thinkt to be used as controllist but it is perhaps not necesarry. 
  // was thinkt to in case the temperature not is missed the year, date and temp should be putted in seperate lists but I don't know if the idea is so god as it sounds. 
-    control =[]; 
+     
    
     year=[];
     date =[];
     temperature = []; 
     
     for (int line : datafile);
+        control =[];
         if line.empty(){continue};
         else
             {std::strtok(line, ",");
