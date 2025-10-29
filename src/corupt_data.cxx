@@ -11,7 +11,8 @@ void corupt_data(datafile){
    
     year=[];
     date =[];
-    temperature = []; 
+    temperature = [];
+    endlist = []; 
     
     for (int line : datafile);
         control =[];
@@ -19,12 +20,13 @@ void corupt_data(datafile){
         else
             {std::strtok(line, ",");
             for (int d : line)
-            contrl.append(d)}; // Thinckt to split upp line to a list with elements.
+            control.append(d)}; // Thinckt to split upp line to a list with elements.
         
         lisst_len= control.size()
-        if lisst_len==3 {return true};  // If the line not is corupted it should have three elements.
-        else if
-            return false;
+        if lisst_len==3 {endlist.append(control)};  // If the line not is corupted it should have three elements.
+        //else if
+        //    return false;
+    return endlist;
             
         
 }
