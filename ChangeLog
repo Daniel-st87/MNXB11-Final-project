@@ -1,3 +1,7 @@
+2025-10-29 Koshin Puri
+I changed my data to Soderarm instead of Halmstad due to a lack of Halmstad data and fixed the respective files.
+Simplified code in certain files, added comments where necessary
+Tested the new main program and troubleshooted an issue with my max_temp_per_year.cxx file
 
 2025-10-28 Daniel Stålhammar
 Made an change in corupt_data.cxx wich I belive should make the file better.
