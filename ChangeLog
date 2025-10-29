@@ -1,4 +1,7 @@
 
+2025-10-28 Daniel Stålhammar
+Made an change in corupt_data.cxx wich I belive should make the file better.
+
 2025-10-28 Koshin Puri
 Added comments to my max_temp_per_year files and troubleshooted compilation issue, therefore creating a custom Makefile to compile the analysis code
 In this process I moved my main file for max_temp_per_year into src instead of the root directory
