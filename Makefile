@@ -10,7 +10,7 @@ LDFLAGS = $(shell root-config --libs) -Wl,-rpath,$(shell root-config --libdir)
 
 
 # Exclude corupt_data.cxx because it fails to compile
-SRC := $(filter-out src/corupt_data.cxx src/temp_analysis.cxx src/main_minmax.cxx src/test.cxx, $(wildcard src/*.cxx))
+SRC := $(filter-out src/corupt_data.cxx src/test.cxx, $(wildcard src/*.cxx))
 OBJ := $(SRC:.cxx=.o)
 
 
