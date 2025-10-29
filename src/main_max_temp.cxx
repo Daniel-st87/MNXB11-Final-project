@@ -10,7 +10,7 @@
 
 void plotMaxTempPerYear(const std::map<int, double> &yearlyMax);
 
-int main() 
+int main_max_Halmstad()
 {
     std::vector<DataRow> data;
     std::ifstream file("Preprocessed_data/Halmstad.csv");
