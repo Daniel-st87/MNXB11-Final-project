@@ -1,3 +1,7 @@
+2025-10-30 Marcus O'Riordan
+
+I created the rootlogon.C file, as well as the .clang-format and .gitignore files.
+
 2025-10-29 Koshin Puri
 I changed my data to Soderarm instead of Halmstad due to a lack of Halmstad data and fixed the respective files.
 Simplified code in certain files, added comments where necessary
@@ -6,7 +10,7 @@ Tested the new main program and troubleshooted an issue with my max_temp_per_yea
 2025-10-29 Marcus O'Riordan
 
 The Makefile was created and written so that the code can be compiled and linked by just writing make.
-The main.cxx file was written so that all of the figures can be created using one file.
+The main.cxx file was written to enable the creation of all figures using a single file.
 I edited some of the code written by others in order to be able to run the makefile. For instance, I renamed some of the functions which were either called main() or had the same name as other functions.
 Header files were also created for the remaining source files that were missing them.
 
