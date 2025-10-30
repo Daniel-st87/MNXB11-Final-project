@@ -3,6 +3,13 @@ I changed my data to Soderarm instead of Halmstad due to a lack of Halmstad data
 Simplified code in certain files, added comments where necessary
 Tested the new main program and troubleshooted an issue with my max_temp_per_year.cxx file
 
+2025-10-29 Marcus O'Riordan
+
+The Makefile was created and written so that the code can be compiled and linked by just writing make.
+The main.cxx file was written so that all of the figures can be created using one file.
+I edited some of the code written by others in order to be able to run the makefile. For instance, I renamed some of the functions which were either called main() or had the same name as other functions.
+Header files were also created for the remaining source files that were missing them.
+
 2025-10-28 Daniel Stålhammar
 Made an change in corupt_data.cxx wich I belive should make the file better.
 
@@ -14,13 +21,18 @@ Created a file to plot the data "plot_max_temp_per_year.cxx"
 Integrated changes into main file and makefile
 Tested output and png creation worked successfully
 
+2025-10-28 German Luzin
+
+Added analysis of the Warmest and Coldest days in Lund over the years, including histogram and Gaussian fit.
+
+2025-10-27 Marcus O'Riordan
+
+A main.cxx file was created which will be used to create all of the figures at once. 
+I split up some of the source code into several different codes so that they can be used by other members of the group, the corresponding header files were also created.
+
 
 2025-10-27 Daniel Stålhammar
 Move the controllist in corupt_data.cxx to be inside the forelop.
-
-2025-10-28 German Luzin
-
-Added analysis of the Warmest and Coldest days in Lund over the years, including histogram and gausian fit.
 
 2025-10-24 Daniel Stålhammar
 
@@ -33,7 +45,8 @@ I added a moving average to the figure that shows the difference in temperature 
 
 2025-10-23 Marcus O'Riordan
 
-The Changelog was created and edited. I created a source and header file which can take two columns from the csv files and turn it into lists, which can then be used to graph. A cxx file was written that can take the .csv files, select the day that is wanted from several years, average the temperature over each year, and then find the difference in these average temperatures between the two cities for that specific day. The code then finally plots this data using root.
+The Changelog was created and edited. I created a source and header file that can take two columns from the .csv files and turn them into lists, which can then be used to graph.
+A cxx file was written that can take the .csv files, select the day that is wanted from several years, average the temperature over each year, and then find the difference in these average temperatures between the two cities for that specific day. The code then finally plots this data using ROOT.
 
 2025-10-23 Daniel Stålhammar
 
@@ -44,9 +57,9 @@ Wrote in Workplan.md my chosen topic
 
 2025-10-22 Marcus O'Riordan
 
-The bash script was used on all of the cities' files to remove the metadata. These new .csv files were then saved into a new folder called Preprocessed_data. Then a source and header file were created which allows you to chose a specific day and month, the source file then selects all of those days from the different years from a specific .csv file. These newly selected dates are then put into a new .csv file. A new source and header file were then created that can average the temperature over a single day.
-
-2025-10-20 German Luzin
+The bash script was used on all of the cities' files to remove the metadata. These new .csv files were then saved into a new folder called Preprocessed_data. 
+Then a source and header file were created which allows you to choose a specific day and month. The source file then selects all of those days from the different years from a specific .csv file. These newly selected dates are then put into a new .csv file. 
+A new source and header file were then created that can average the temperature over a single day.
 
 2025-10-20 Marcus O'Riordan
 
@@ -54,6 +67,6 @@ The workplan was edited to include what figure I was going to generate.
 
 2025-10-18 Marcus O'Riordan
 
-The repository was created as well as the workplan. The unedited datasets were copied over from the project template and the individual files were extracted. Finally, a bash script was written which removes the metadata from the origional .csv files, leaving only 3 columns with the date, time, and temperature.
+The repository was created, as well as the workplan. The unedited datasets were copied over from the project template, and the individual files were extracted. Finally, a bash script was written that removes the metadata from the original .csv files, leaving only 3 columns with the date, time, and temperature.
 
 
