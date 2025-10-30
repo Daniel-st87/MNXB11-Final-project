@@ -1,3 +1,7 @@
+2025-10-30 German Luzin
+
+Bug fixes. Rotation of the histogram is changed, histogram name changed.
+
 2025-10-30 Daniel Stålhammar
 
 I made a litle change in corupt_data.cxx
