@@ -97,21 +97,6 @@ void minmax()
     std::vector<DataRow> rows;
     std::string line;
 
-    // If your CSV has a header, skip it:
-    std::streampos start = csv.tellg();
-    if (std::getline(csv, line))
-    {
-        if (!(line.size() >= 4 && std::isdigit(static_cast<unsigned char>(line[0]))))
-        {
-            // header consumed
-        }
-        else
-        {
-            // no header → rewind and process from first line
-            csv.clear();
-            csv.seekg(start);
-        }
-    }
 
     while (std::getline(csv, line))
     {
@@ -144,10 +129,9 @@ void minmax()
     auto byYear = find_hottest_coldest_by_year(daily);
 
     // Create two histograms for hottest/coldest day-of-year
-    TH1I *hHot = new TH1I("hHot",
-                          "Hottest day of each year;Day of year;Entries", 366, 0.5, 366.5);
-    TH1I *hCold = new TH1I("hCold",
-                           "Coldest day of each year;Day of year;Entries", 366, 0.5, 366.5);
+    TH1I *hHot = new TH1I("hHot","Hottest day of each year;Day of year;Entries", 366, 0.5, 366.5);
+    TH1I *hCold = new TH1I("hCold","Coldest day of each year;Day of year;Entries", 366, 0.5, 366.5);
+    
 
     // Fill histograms using your per-year data
     for (const auto &kv : byYear)

@@ -3,7 +3,7 @@
 #include <limits>
 #include <cctype>
 
-// ---- helpers: leap year + day_of_year (no C++20 needed) ----
+// determining leap year to find day_of_year
 static bool is_leap(int y)
 {
     return (y % 400 == 0) || (y % 4 == 0 && y % 100 != 0);
@@ -21,14 +21,7 @@ int day_of_year(int y, int m, int d)
     return doy; // 1..366
 }
 
-// ---- daily means: "YYYY-MM-DD" -> average temperature ----
-std::map<std::string, double> calc_average_daily(const std::vector<DataRow> &data)
-{
-    // Simply call your existing calc_average_temp function
-    return calc_average_temp(data);
-}
-
-// per-year extremes (hottest/coldest) by daily mean ----
+// per-year extremes (hottest/coldest) by daily mean 
 std::map<int, YearExtremes> find_hottest_coldest_by_year(const std::map<std::string, double> &dailyMean)
 {
     std::map<int, YearExtremes> perYear;
