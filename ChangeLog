@@ -1,14 +1,15 @@
-2025-10-30 German Luzin
+2025-10-30 German Luzin <ge2465lu-s@student.lu.se>
 
 Bug fixes. Rotation of the histogram is changed, histogram name changed.
 
-2025-10-30 Daniel Stålhammar
+2025-10-30 Daniel Stålhammar <da7612st-s@student.lu.se>
 
 I made a litle change in corupt_data.cxx
 
 2025-10-30 Marcus O'Riordan <marcus.oriordan4@gmail.com>
 
-I created the rootlogon.C file, as well as the .clang-format and .gitignore files.
+I created the rootlogon.C file, as well as the .clang-format and .gitignore files. I also added more comments to some of the other source files.
+I fixed the Makefile as well as simplified the compare_temps.cxx a bit.
 
 2025-10-29 Koshin Puri <puri.koshin@gmail.com>
 I changed my data to Soderarm instead of Halmstad due to a lack of Halmstad data and fixed the respective files.
