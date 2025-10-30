@@ -1,19 +1,24 @@
-2025-10-29 Koshin Puri
+2025-10-30 Marcus O'Riordan <marcus.oriordan4@gmail.com>
+
+I created the rootlogon.C file, as well as the .clang-format and .gitignore files.
+
+2025-10-29 Koshin Puri <puri.koshin@gmail.com>
 I changed my data to Soderarm instead of Halmstad due to a lack of Halmstad data and fixed the respective files.
 Simplified code in certain files, added comments where necessary
 Tested the new main program and troubleshooted an issue with my max_temp_per_year.cxx file
 
-2025-10-29 Marcus O'Riordan
+2025-10-29 Marcus O'Riordan <marcus.oriordan4@gmail.com>
 
 The Makefile was created and written so that the code can be compiled and linked by just writing make.
-The main.cxx file was written so that all of the figures can be created using one file.
+The main.cxx file was written to enable the creation of all figures using a single file.
 I edited some of the code written by others in order to be able to run the makefile. For instance, I renamed some of the functions which were either called main() or had the same name as other functions.
 Header files were also created for the remaining source files that were missing them.
 
-2025-10-28 Daniel Stålhammar
+2025-10-28 Daniel Stålhammar <da7612st-s@student.lu.se>
 Made an change in corupt_data.cxx wich I belive should make the file better.
 
-2025-10-28 Koshin Puri
+2025-10-28 Koshin Puri <puri.koshin@gmail.com>
+
 Added comments to my max_temp_per_year files and troubleshooted compilation issue, therefore creating a custom Makefile to compile the analysis code
 In this process I moved my main file for max_temp_per_year into src instead of the root directory
 Added how to run max_temp function in README.md
@@ -21,51 +26,51 @@ Created a file to plot the data "plot_max_temp_per_year.cxx"
 Integrated changes into main file and makefile
 Tested output and png creation worked successfully
 
-2025-10-28 German Luzin
+2025-10-28 German Luzin <ge2465lu-s@student.lu.se>
 
 Added analysis of the Warmest and Coldest days in Lund over the years, including histogram and Gaussian fit.
 
-2025-10-27 Marcus O'Riordan
+2025-10-27 Marcus O'Riordan <marcus.oriordan4@gmail.com>
 
 A main.cxx file was created which will be used to create all of the figures at once. 
 I split up some of the source code into several different codes so that they can be used by other members of the group, the corresponding header files were also created.
 
 
-2025-10-27 Daniel Stålhammar
+2025-10-27 Daniel Stålhammar <da7612st-s@student.lu.se>
 Move the controllist in corupt_data.cxx to be inside the forelop.
 
-2025-10-24 Daniel Stålhammar
+2025-10-24 Daniel Stålhammar <da7612st-s@student.lu.se>
 
 The corupt_data.cxx and corupt_data.h files was edited to suits better against the processed data-files.
 Unshore if they works. The corupt_data.cxx and corupt_data.h files needs more overlock.
 
-2025-10-24 Marcus O'Riordan
+2025-10-24 Marcus O'Riordan <marcus.oriordan4@gmail.com>
 
 I added a moving average to the figure that shows the difference in temperature between Lund and Lulea. Additionally, more comments were added to the source files to make them easier to understand.
 
-2025-10-23 Marcus O'Riordan
+2025-10-23 Marcus O'Riordan <marcus.oriordan4@gmail.com>
 
 The Changelog was created and edited. I created a source and header file that can take two columns from the .csv files and turn them into lists, which can then be used to graph.
 A cxx file was written that can take the .csv files, select the day that is wanted from several years, average the temperature over each year, and then find the difference in these average temperatures between the two cities for that specific day. The code then finally plots this data using ROOT.
 
-2025-10-23 Daniel Stålhammar
+2025-10-23 Daniel Stålhammar <da7612st-s@student.lu.se>
 
 The files corupt_data.h and corupt_data.cxx was created. They should controll if it is some date in the csv-files which miss teperature. 
 
-2025-10-22 Koshin Puri
+2025-10-22 Koshin Puri <puri.koshin@gmail.com>
 Wrote in Workplan.md my chosen topic 
 
-2025-10-22 Marcus O'Riordan
+2025-10-22 Marcus O'Riordan <marcus.oriordan4@gmail.com>
 
 The bash script was used on all of the cities' files to remove the metadata. These new .csv files were then saved into a new folder called Preprocessed_data. 
 Then a source and header file were created which allows you to choose a specific day and month. The source file then selects all of those days from the different years from a specific .csv file. These newly selected dates are then put into a new .csv file. 
 A new source and header file were then created that can average the temperature over a single day.
 
-2025-10-20 Marcus O'Riordan
+2025-10-20 Marcus O'Riordan <marcus.oriordan4@gmail.com>
 
 The workplan was edited to include what figure I was going to generate.
 
-2025-10-18 Marcus O'Riordan
+2025-10-18 Marcus O'Riordan <marcus.oriordan4@gmail.com>
 
 The repository was created, as well as the workplan. The unedited datasets were copied over from the project template, and the individual files were extracted. Finally, a bash script was written that removes the metadata from the original .csv files, leaving only 3 columns with the date, time, and temperature.
 
