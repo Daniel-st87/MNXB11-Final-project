@@ -1,13 +1,3 @@
-/*
-gSystem->AddIncludePath("-I/home/marcus1/git/MNXB11-Final-project/include");
-.L /home/marcus1/git/MNXB11-Final-project/src/filter_date.cxx+
-.L /home/marcus1/git/MNXB11-Final-project/src/average_temp.cxx+
-.L /home/marcus1/git/MNXB11-Final-project/src/make_lists.cxx+
-.L /home/marcus1/git/MNXB11-Final-project/src/CSV_reader.cxx+
-.L /home/marcus1/git/MNXB11-Final-project/src/compare_temps.cxx+
-
-*/
-
 #include "compare_temps.h"
 #include "filter_date.h"
 #include "average_temp.h"
@@ -15,6 +5,7 @@ gSystem->AddIncludePath("-I/home/marcus1/git/MNXB11-Final-project/include");
 #include "data_types.h"
 
 #include <TGraph.h>
+#include <TString.h>
 #include <TAxis.h>
 #include <TCanvas.h>
 #include <TLegend.h>
@@ -110,27 +101,25 @@ int compare_temps()
     grDiff->SetLineColor(kBlack);
     grDiff->SetMarkerColor(kRed);
     grDiff->SetMarkerStyle(20);
-    grDiff->SetLineWidth(2);
     grDiff->SetTitle(Form("Temperature Difference (Lund - Lulea) on Christmas (from %d)", static_cast<int>(years.front()))); // This last part does so title has year that the data starts from
     grDiff->GetXaxis()->SetTitle("Year");
     grDiff->GetYaxis()->SetTitle("Temperature Difference (#circ C)");
 
     TGraph *grMoving = new TGraph(years.size(), years.data(), movingAvg.data());
     grMoving->SetLineColor(kBlue);
-    grMoving->SetLineWidth(2);
     grMoving->SetLineStyle(2);
 
     grDiff->Draw("ALP");
     grMoving->Draw("L SAME");
 
-    auto legend = new TLegend(0.15, 0.75, 0.45, 0.9); // creates the legend and places it
-    legend->AddEntry(grDiff, "Yearly temperature difference", "lp");
+    auto legend = new TLegend(0.60, 0.15, 0.88, 0.32); // creates the legend and places it in bottom right
+    legend->AddEntry(grDiff, "Yearly temperature difference", "p");
     legend->AddEntry(grMoving, "5-year moving average", "l");
     legend->Draw();
 
     c->SaveAs("figures/temp_diff_christmas.png");
 
-    std::cout << "\nSaved plot to temp_diff_christmas_with_averages.png\n";
+    std::cout << "\nSaved plot to temp_diff_christmas.png\n";
 
     return 0;
 }

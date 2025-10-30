@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # How to use: ./process_csv.sh inputfilename outputfilename startingrow col1 col2 col3
-# Example: ./process_csv.sh data.csv processed.csv 25 2 5 7
+# Example: ./process_csv.sh datasets/smhi-opendata_1_53430_20231007_155558_Lund.csv Preprocessed_data/Lund2.csv 14 1 2 3
 
 # Arguments
 INPUT_FILE="$1"
