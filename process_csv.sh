@@ -6,10 +6,10 @@
 # Arguments
 INPUT_FILE="$1"
 OUTPUT_FILE="$2"
-START_LINE="$3"   # the number of the column where the important data starts
+START_LINE="$3"   # the number of the row where the important data starts
 COL1="$4"         # first column to extract
-COL2="$5"         # second column
-COL3="$6"         # third column
+COL2="$5"         
+COL3="$6"         
 
 #Check to make sure that all of the arguments are provided
 if [ $# -ne 6 ]; then
