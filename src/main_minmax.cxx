@@ -79,7 +79,7 @@ void FitGaussian(TH1 *hist, const std::string &label, int shiftBins = 100)
     gausBack->Draw("SAME");
     // Second Gaussian with same parameters in order to see the tail of the cold days distribution
     TF1 *gausBack2 = new TF1(Form("gausFit_back_%d", uid), "gaus", xmin, xmax);
-    gausBack2->SetParameters(A, meanX + 360, sigma);
+    gausBack2->SetParameters(A, meanX + 366, sigma);
     gausBack2->SetLineColor(kBlack);
     gausBack2->SetLineWidth(2);
     gausBack2->Draw("SAME");
@@ -173,8 +173,8 @@ void minmax()
     hHot->Draw();        // draw first
     hCold->Draw("SAME"); // overlay second
 
-    FitGaussian(hHot, "Hottest Day of Year");
-    FitGaussian(hCold, "Coldest Day of Year");
+    FitGaussian(hHot, "Hottest and coldest Day of Year");
+    FitGaussian(hCold, "Hottest and coldest Day of Year");
 
     // Add a legend
     TLegend *leg = new TLegend(0.70, 0.75, 0.90, 0.90);
