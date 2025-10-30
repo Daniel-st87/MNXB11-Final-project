@@ -1,3 +1,7 @@
+2025-10-30 Daniel Stålhammar
+
+I made a litle change in corupt_data.cxx
+
 2025-10-30 Marcus O'Riordan <marcus.oriordan4@gmail.com>
 
 I created the rootlogon.C file, as well as the .clang-format and .gitignore files.

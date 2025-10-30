@@ -13,8 +13,8 @@ void corupt_data(datafile){
     date =[];
     temperature = [];
     endlist = []; 
-    
-    for (int line : datafile);
+    std::ifstream datalist(datafile);
+    for (int line : datalist);
         control =[];
         if line.empty(){continue};
         else
@@ -26,6 +26,7 @@ void corupt_data(datafile){
         if lisst_len==3 {endlist.append(control)};  // If the line not is corupted it should have three elements.
         //else if
         //    return false;
+    datalist.close();
     return endlist;
             
         

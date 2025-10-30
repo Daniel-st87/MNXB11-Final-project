@@ -1,4 +1,4 @@
-#indef Corupt_data
+#ifdef Corupt_data
 #define Corupt_data
 
 #include <iostream>
