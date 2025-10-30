@@ -1,0 +1,48 @@
+#This tells git what we dont want in the repository
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Contents of the external folder should not be in git
+external/*
+
+# Contents of the build folder should not be in git
+build/*
+
+# Resulting ROOT files should not be in git
+results/*
+
+# Don't add the argumentum library to git
+argumentum*
+
+# Don't add the main executable to git
+main
